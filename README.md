@@ -11,26 +11,6 @@ The AI Resume Assistant helps users:
 - Provide personalized feedback and suggestions for improvement
 - Optionally generate formatted resume drafts using LLMs
 - Export final resumes in PDF or Word formats
-
----
-
-## 📁 Repository Structure
-
-aiResume/
-├── notebooks/ # Jupyter notebooks demonstrating experiments
-│ ├── resume_analysis.ipynb
-│ └── resume_generation.ipynb
-├── src/ # Source code for scripts or modules
-│ ├── analyze_resume.py
-│ └── generate_resume.py
-├── data/ # Sample data, resumes, and output files
-├── requirements.txt
-└── README.md
-
-yaml
-Copy
-Edit
-
 ---
 
 ## 🛠 Tech Stack & Tools
