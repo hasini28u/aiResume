@@ -1,96 +1,57 @@
-# 🧠 AI Resume Assistant — Resume Analysis & Generation (using LLMs)
+# AI Resume Screener & Interview Assistant
 
-This repository contains my implementation of an AI-powered resume assistant, developed using Natural Language Processing and Large Language Models, as part of my AI/ML training.
-
----
-
-## 🚀 Project Overview
-
-The AI Resume Assistant helps users:
-- Analyze resumes for keywords, ATS compatibility, and role alignment
-- Provide personalized feedback and suggestions for improvement
-- Optionally generate formatted resume drafts using LLMs
-- Export final resumes in PDF or Word formats
----
-
-## 🛠 Tech Stack & Tools
-
-- **Python** for core logic  
-- **Jupyter Notebooks** for walkthroughs  
-- NLP model pipeline: spaCy, NLTK, or Hugging Face Transformers  
-- LLM integration using OpenAI or Google Gemini APIs  
-- File parsing tools: PyPDF2, python-docx, or equivalent  
-- Streamlit (optional) for a demo UI
+A Streamlit-based LLM application that evaluates resumes against job descriptions using Groq’s LLaMA-3 model.  
+It outputs a match verdict (ACCEPTED/REJECTED) along with improvement suggestions — acting as an intelligent AI career coach.
 
 ---
 
-## 🧪 Key Features
+## Features
 
-- 🛠 **Resume Parsing & Analysis**  
-  Extract sections like experience, education, skills, and match them to job descriptions.
-
-- 🔍 **Keyword Gap & ATS Score**  
-  Identify missing keywords and assess ATS readiness.
-
-- ✍️ **AI-Driven Suggestions & Generation**  
-  Curate resume content tailored to specific roles or improve existing bullet points.
-
-- 📤 **Resume Export**  
-  Output improved resumes in PDF or DOCX formats.
+- 📄 Uploads **job description** and **resume** as PDFs
+- 🧠 Uses **Groq LLM (LLaMA 3)** for contextual matching
+- 📝 Provides **structured feedback**:
+  - Verdict: ACCEPTED or REJECTED
+  - Skill and format improvement suggestions
+- 🌐 (Planned) Google Calendar & Gmail integration for interview follow-ups
 
 ---
 
-## ⚡ How to Use / Run the Code
+## Tech Stack
 
-1. **Clone the repo**  
-   ```bash
-   git clone https://github.com/hasini28u/aiResume.git
-   cd aiResume
-Install dependencies
+| Component        | Tech                          |
+|------------------|-------------------------------|
+| UI               | Streamlit                     |
+| PDF Parsing      | PyPDF2                        |
+| LLM              | Groq API (LLaMA 3 - 8B)        |
+| Prompting        | LangChain PromptTemplate      |
+| Google APIs      | OAuth (Gmail & Calendar scopes) |
 
-bash
-Copy
-Edit
+---
+
+## 🧪 How it Works
+
+1. Upload **resume** and **job description**
+2. Text is extracted from both
+3. A structured **prompt** is built and sent to Groq
+4. AI returns:
+   - Verdict (ACCEPTED or REJECTED)
+   - Suggestions for improvement
+
+---
+
+## 🏁 Getting Started
+
+```bash
 pip install -r requirements.txt
-Set up environment variables
+⚠️ Add your Groq API key to the script before running.
 
+📂 File Overview
 bash
 Copy
 Edit
-export OPENAI_API_KEY="your_key_here"
-# or
-export GOOGLE_API_KEY="your_gemini_key_here"
-Run analysis or generation
-
-bash
-Copy
-Edit
-python src/analyze_resume.py --input your_resume.pdf
-python src/generate_resume.py --role "data analyst"
-Open notebooks for examples and experimentation:
-
-bash
-Copy
-Edit
-jupyter notebook notebooks/resume_analysis.ipynb
-(Optional) Launch demo (if Streamlit included):
-
-bash
-Copy
-Edit
-streamlit run app.py
-🎓 Learning Outcomes
-During this project, I gained practical experience in:
-
-Resume parsing using NLP techniques
-
-Evaluating ATS compatibility and keyword matching
-
-Fine-tuning LLM prompts for content generation
-
-Building end-to-end pipelines for input → analysis → output
-
-📬 Connect with Me
-💼 LinkedIn: www.linkedin.com/in/hasini-uppaluri-387a592a2
-
-📧 Email: hasiniuppaluri@gmail.com
+aiResume-main/
+├── main.py               # Streamlit app logic
+├── client_secret.json    # (For Gmail/Calendar integration)
+├── README.md             # You're reading it
+Author
+Hasini Uppaluri
