@@ -47,8 +47,6 @@ pip install -r requirements.txt
 
 📂 File Overview
 bash
-Copy
-Edit
 aiResume-main/
 ├── main.py               # Streamlit app logic
 ├── client_secret.json    # (For Gmail/Calendar integration)
